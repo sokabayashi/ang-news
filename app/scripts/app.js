@@ -15,8 +15,10 @@ var app = angular.module('angNewsApp', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
-  ]);
+    'ngTouch',
+    'firebase'
+  ])
+  .constant( 'FIREBASE_URL', 'https://flickering-fire-1316.firebaseio.com/');
 
   app.config(function ($routeProvider) {
     $routeProvider
