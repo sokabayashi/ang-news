@@ -34,6 +34,10 @@ var app = angular.module('angNewsApp', [
         templateUrl: 'views/register.html',
         controller:  'AuthCtrl'
       })
+      .when( '/login', {
+        templateUrl: 'views/login.html',
+        controller:  'AuthCtrl'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
