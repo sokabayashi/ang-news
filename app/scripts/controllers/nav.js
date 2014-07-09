@@ -4,7 +4,7 @@
 
 'use strict';
 
-app.controller( 'NavCtrl', function( $scope, $location, Post ) {  // Post is angularFire stuff
+app.controller( 'NavCtrl', function( $scope, $location, Post, Auth ) {  // Post is angularFire stuff
   $scope.post = { url: 'http://', title: '' };
 
   $scope.submitPost = function() {
@@ -14,4 +14,9 @@ app.controller( 'NavCtrl', function( $scope, $location, Post ) {  // Post is ang
         $scope.post = { url: 'http://', title: '' }; // reset input boxes to original state
      });
   };
+
+  $scope.logout = function () {
+    Auth.logout();
+  };
+
 });
