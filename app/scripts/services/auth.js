@@ -6,6 +6,7 @@
 
 app.factory( 'Auth',
   function( $firebaseSimpleLogin, FIREBASE_URL, $rootScope ) {
+
     var ref = new Firebase( FIREBASE_URL );
 
     var auth = $firebaseSimpleLogin( ref );
@@ -14,12 +15,26 @@ app.factory( 'Auth',
       register: function ( user ) {
         return auth.$createUser( user.email, user.password );
       },
+/*
       signedIn: function () {
+        auth.$getCurrentUser().then( function( currentUser ) {
+          console.log( currentUser );
+        }, function() {
+          console.log( 'Cannot get user' );
+        });
+ },
+ */
+      signedIn : function() {
+        console.log( auth.user );
+        console.log( auth.$getCurrentUser() );
         return auth.user !== null; // not null means user signed in
       },
+
+
       login: function (user) {
         return auth.$login('password', user);
       },
+
       logout:   function () {
         auth.$logout();
       }
