@@ -10,12 +10,12 @@
  * Main module of the application.
  */
 var app = angular.module('angNewsApp', [
-    'ngAnimate',
+//    'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
+//    'ngTouch',
     'firebase'
   ])
   .constant( 'FIREBASE_URL', 'https://flickering-fire-1316.firebaseio.com/');
@@ -30,17 +30,13 @@ var app = angular.module('angNewsApp', [
         templateUrl: 'views/showpost.html',
         controller:  'PostViewCtrl'
       })
-      .when( '/register', {
+      .when('/register', {
         templateUrl: 'views/register.html',
-        controller:  'AuthCtrl'
+        controller: 'AuthCtrl'
       })
-      .when( '/login', {
+      .when('/login', {
         templateUrl: 'views/login.html',
-        controller:  'AuthCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        controller: 'AuthCtrl'
       })
       .otherwise({
         redirectTo: '/'
